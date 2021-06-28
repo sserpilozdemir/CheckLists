@@ -38,7 +38,7 @@
                                                 <constraint firstAttribute="width" constant="13" id="UA5-sU-pXG"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -205,6 +205,43 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection id="WOc-NB-UnE">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="R5Q-si-hKD">
+                                        <rect key="frame" x="0.0" y="97.5" width="375" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="R5Q-si-hKD" id="hj0-Pf-6oO">
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L9X-me-OCJ">
+                                                    <rect key="frame" x="16" y="8" width="32" height="28"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="juZ-tf-g5L">
+                                                    <rect key="frame" x="304" y="-42" width="36" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="WVa-vV-Nfc"/>
+                                                        <constraint firstAttribute="height" constant="128" id="WXF-wa-2Jy"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="juZ-tf-g5L" firstAttribute="centerY" secondItem="hj0-Pf-6oO" secondAttribute="centerY" id="EJh-sd-OVI"/>
+                                                <constraint firstAttribute="trailing" secondItem="juZ-tf-g5L" secondAttribute="trailing" constant="8" id="IiO-b3-7KJ"/>
+                                                <constraint firstItem="L9X-me-OCJ" firstAttribute="top" secondItem="hj0-Pf-6oO" secondAttribute="topMargin" constant="-3" id="Qu6-XW-2oJ"/>
+                                                <constraint firstItem="L9X-me-OCJ" firstAttribute="centerY" secondItem="juZ-tf-g5L" secondAttribute="centerY" id="hf3-3h-PrK"/>
+                                                <constraint firstItem="L9X-me-OCJ" firstAttribute="leading" secondItem="hj0-Pf-6oO" secondAttribute="leadingMargin" id="oUo-gL-grG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="x2Y-9D-opV" kind="show" identifier="PickIcon" id="t4Y-so-m21"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="oEx-A5-Nxg" id="hCl-fC-6FV"/>
@@ -225,12 +262,51 @@
                     </navigationItem>
                     <connections>
                         <outlet property="doneBarButton" destination="2X0-pq-adw" id="9Jf-WW-Gzg"/>
+                        <outlet property="iconImage" destination="juZ-tf-g5L" id="crc-Qg-tRa"/>
                         <outlet property="textField" destination="vgI-ex-hJ0" id="cUY-ft-HYr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z70-gc-ix8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-807" y="745"/>
+            <point key="canvasLocation" x="-807.20000000000005" y="744.3778110944528"/>
+        </scene>
+        <!--Choose Icon-->
+        <scene sceneID="k6S-Wn-pQA">
+            <objects>
+                <tableViewController id="x2Y-9D-opV" customClass="IconPickerViewController" customModule="CheckLists" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cp6-cO-hUH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="IconCell" textLabel="izL-h9-uIg" style="IBUITableViewCellStyleDefault" id="gnC-fG-RsN">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gnC-fG-RsN" id="V3i-vc-hLv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="izL-h9-uIg">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="x2Y-9D-opV" id="kTk-h8-Urp"/>
+                            <outlet property="delegate" destination="x2Y-9D-opV" id="qaJ-RR-9kf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Choose Icon" id="hMD-4Z-gsL"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWc-ll-CBd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7" y="744"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZX8-PA-LHf">
@@ -255,6 +331,7 @@
         <segue reference="DMd-bD-pc0"/>
         <segue reference="6iM-sA-wU6"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.015686274509803921" green="0.66274509803921566" blue="0.92156862745098034" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
